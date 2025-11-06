@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Maha Style Demo</title>
+<style>
+  :root{
+    --bg:#0b0b0d;--panel:#121217;--panel2:#0f1512;
+    --brand:#21d19f;--brand2:#19a97f;--text:#e9fdf5;--muted:#9bd7c4;
+    --line:rgba(255,255,255,.08);--amber:#ffd36b;
+  }
+  *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
+  .wrap{max-width:1100px;margin:auto}
+  /* Top bar */
+  .appbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(0,0,0,.5);border-bottom:1px solid var(--line)}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px}
+  .logo{display:flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.5px}
+  .logo i{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:rgba(33,209,159,.12);border:1px solid rgba(33,209,159,.35)}
+  .btn{border:0;border-radius:12px;padding:10px 14px;font-weight:700}
+  .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+  .btn-brand{background:var(--brand);color:#03120b}
+  /* Promo cards */
+  .grid{display:grid;gap:10px}
+  @media(min-width:768px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+  .tile{background:linear-gradient(135deg,rgba(32,165,132,.15),rgba(0,0,0,.5));border:1px solid var(--line);border-radius:18px;padding:14px}
+  .badge{font-size:10px;text-transform:uppercase;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);padding:3px 6px;border-radius:999px;color:#dff8ee}
+  .tile h3{margin:6px 0 2px;font-size:16px;color:var(--brand)}
+  .tile p{margin:0;color:#cfeee4;font-size:13px}
+  /* Feature tiles */
+  .feat{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:14px}
+  .feat .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  /* Chips */
+  .chips{display:flex;gap:8px;overflow:auto;padding-bottom:6px}
+  .chip{flex:0 0 auto;display:inline-flex;gap:6px;align-items:center;border:1px solid var(--line);background:rgba(255,255,255,.06);padding:8px 12px;border-radius:999px;color:#e7f7f1;font-size:14px}
+  .chip i{font-size:16px}
+  /* Game cards */
+  .games{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+  @media(min-width:480px){.games{grid-template-columns:repeat(3,1fr)}}
+  @media(min-width:840px){.games{grid-template-columns:repeat(6,1fr)}}
+  .game{position:relative;aspect-ratio:4/5;border:1px solid var(--line);border-radius:18px;padding:10px;background:linear-gradient(135deg,#17181e,#0b0b0d)}
+  .ribbon{position:absolute;top:8px;left:8px;background:rgba(255,211,107,.18);color:#ffe9a6;border:1px solid rgba(255,211,107,.35);padding:2px 6px;border-radius:8px;font-size:10px;font-weight:700}
+  .art{margin-top:26px;height:96px;width:96px;border:1px solid rgba(33,209,159,.35);background:rgba(33,209,159,.12);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--muted)}
+  .gname{position:absolute;left:12px;right:12px;bottom:10px;font-weight:700}
+  .gsub{font-size:12px;color:#bfe7da}
+  /* Bottom nav */
+  .bottom{position:sticky;bottom:0;z-index:40;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+  .nav{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:8px}
+  .nav a{display:flex;flex-direction:column;align-items:center;gap:6px;padding:6px;border-radius:12px;color:#dff6ee;text-decoration:none}
+  .nav a:active{background:rgba(255,255,255,.06)}
+</style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="appbar">
+    <div class="wrap row">
+      <div class="logo"><i>♠️</i><span>MAHA 6</span></div>
+      <div>
+        <button class="btn btn-ghost">Login</button>
+        <button class="btn btn-brand">Register</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding:14px">
+    <!-- Promo -->
+    <div class="grid cols-3">
+      <article class="tile">
+        <div class="badge">Promo</div>
+        <h3>Register Now</h3>
+        <p>Claim your welcome bonus</p>
+        <button class="btn btn-brand" style="margin-top:10px;width:100%">Join Free</button>
+      </article>
+      <article class="tile">
+        <div class="badge">Event</div>
+        <h3>Hot Slots</h3>
+        <p>Daily jackpots & rewards</p>
+        <button class="btn btn-brand" style="margin-top:10px;width:100%">Play Now</button>
+      </article>
+      <article class="tile">
+        <div class="badge">VIP</div>
+        <h3>VIP Privilege</h3>
+        <p>Level up for perks</p>
+        <button class="btn btn-brand" style="margin-top:10px;width:100%">See Perks</button>
+      </article>
+    </div>
+
+    <!-- Feature Tiles -->
+    <div class="grid" style="margin-top:12px;grid-template-columns:repeat(2,1fr)">
+      <div class="feat">
+        <div class="top"><span>🎯 Promotion</span><span class="badge">New</span></div>
+        <small style="color:#bfe7da">Latest offers & bonuses</small>
+      </div>
+      <div class="feat">
+        <div class="top"><span>💎 VIP Privilege</span><span class="badge">Tier</span></div>
+        <small style="color:#bfe7da">Climb levels, unlock gifts</small>
+      </div>
+    </div>
+
+    <!-- Chips -->
+    <div class="chips" style="margin-top:14px">
+      <span class="chip"><i>🕓</i>Recent</span>
+      <span class="chip"><i>🔥</i>Hot Games</span>
+      <span class="chip"><i>🎰</i>Slot</span>
+      <span class="chip"><i>🏏</i>Cricket</span>
+      <span class="chip"><i>📺</i>Live</span>
+    </div>
+
+    <!-- Games -->
+    <div class="games" style="margin-top:12px">
+      <a class="game" href="#">
+        <span class="ribbon">HOT</span>
+        <div class="art">SA</div>
+        <div class="gname">SuperAce<div class="gsub">Tap to open</div></div>
+      </a>
+      <a class="game" href="#"><span class="ribbon">LIVE</span><div class="art">FT</div><div class="gname">Funky Time<div class="gsub">Tap to open</div></div></a>
+      <a class="game" href="#"><span class="ribbon">NEW</span><div class="art">LW</div><div class="gname">Lucky Wheel<div class="gsub">Tap to open</div></div></a>
+      <a class="game" href="#"><span class="ribbon">HOT</span><div class="art">GS</div><div class="gname">Golden Spin<div class="gsub">Tap to open</div></div></a>
+      <a class="game" href="#"><span class="ribbon">SPORTS</span><div class="art">MC</div><div class="gname">Mega Cricket<div class="gsub">Tap to open</div></div></a>
+      <a class="game" href="#"><span class="ribbon">NEW</span><div class="art">SB</div><div class="gname">Star Burst<div class="gsub">Tap to open</div></div></a>
+    </div>
+  </div>
+
+  <!-- Bottom Nav -->
+  <div class="bottom">
+    <div class="wrap nav">
+      <a href="#">🏠<span>Home</span></a>
+      <a href="#">%<span>Promotion</span></a>
+      <a href="#">👛<span>Wallet</span></a>
+      <a href="#">👥<span>Referral</span></a>
+      <a href="#">👤<span>Account</span></a>
+    </div>
+  </div>
+</body>
+</html>
